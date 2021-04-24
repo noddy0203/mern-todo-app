@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background{
+background-color: rgb(177, 164, 164);
+font-family: 'Noto Serif', serif;
+height: 100vh;
+min-width: 771px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.main_div{
+margin: 0 auto;
+ width: 772px;
+height: 100vh;
+min-width: 572px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+figure{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 15px;
+}
+.imgMod{
+width: 80px;
+height: 90px;
+text-align: center;
+margin-bottom: 15px;
+}
+
+figcaption{
+font-size: 1.5rem;
+}
+.addItem{
+display: flex;
+margin-bottom: 15px;
+}
+
+.text{
+  width: 250px; 
+height: 34px;
+border: none;
+outline: none;
+padding-left: 15px;
+border-radius: 5px;
+border: 1px solid rgb(150, 137, 137);
   }
+.text-icon{
+font-size: 34px;
+}
+.eachItem{
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* border: 1px solid rgb(150, 137, 137); */
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h4{
+  border-bottom:1px solid rgb(196, 182, 182);
+  width: 250px;
+  margin-right: 30px;
+  font-size: 1.1rem;
+  padding-left: 15px;
+  display: inline;
+font-weight: 500;
+}
+.item-icon{
+  font-size: 26px;
+  /* padding-left: 44px; */
+}
+
+.btnlg{
+  margin-top: 15px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button{
+  margin-top: 15px;
+  width: 200px;
+height: 35px;
+  padding: 10px 30px;
+  border-radius: 2px;
+  background-color: whitesmoke;
+  font-size: 1rem;
+font-weight: 500;
+position: absolute;
+/* top: 50%;
+left: 50%;
+transform: translate(-50%,350%); */
+overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button::before{
+content: "SAVE";
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+transition: 0.5s all;
+}
+
+button::after{
+  content: "REMOVE";
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+top: 140%;
+transition: 0.5s all;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+button:hover::before{
+   top: -50%; 
+ }
+
+ button:hover::after{
+/* background-color: thistle; */
+color: rgb(82, 1, 1);
+  top: 50%;
 }
