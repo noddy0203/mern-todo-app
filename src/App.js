@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import todo from "./todo.svg"
 import "./App.css"
 const App = () => {
 
+  const toGetLocalItems = ()=>{
+    const lists = localStorage.getItem("list")
+    if(lists){
+      return JSON.parse(localStorage.getItem("list"))
+    } else {
+      return [];
+    }
+  }
+
 const [data , setData] = useState("")
-const [input, setInput] = useState([])
+const [input, setInput] = useState(toGetLocalItems())
 
 const addItem = ()=>{
 if(data===""){
@@ -24,6 +33,15 @@ setInput(filterData)
 const removeAll = ()=> {
      setInput([])
 }
+
+//to set list in local storage
+useEffect(() => {
+    localStorage.setItem("list" , JSON.stringify(input))
+}, [input])
+
+//to get list from local storage
+
+
   return (
    <>
       <div className="background">
